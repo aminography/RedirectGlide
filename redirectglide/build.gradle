@@ -1,4 +1,6 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
 
 android {
     compileSdkVersion 28
@@ -35,3 +37,46 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
 }
+
+repositories {
+    mavenCentral()
+}
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.0'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.1'
+    }
+}
+
+//--------------------------------------------------------------------------------------------------
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'RedirectGlide'
+    orgName = 'aminography'
+
+    publishedGroupId = 'com.aminography'
+    artifact = 'redirectglide'
+    libraryVersion = "1.0.0"
+
+    libraryName = 'RedirectGlide'
+    libraryDescription = 'RedirectGlide makes Glide able to show images with indirect Urls.'
+
+    siteUrl = 'https://github.com/aminography/RedirectGlide'
+    gitUrl = 'https://github.com/aminography/RedirectGlide.git'
+
+    developerId = 'aminography'
+    developerName = 'Mohammad Amin Hassani'
+    developerEmail = 'aminography@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+apply from: rootProject.file('gradle/install.gradle')
+apply from: rootProject.file('gradle/bintray-android.gradle')
