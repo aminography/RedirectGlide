@@ -28,7 +28,7 @@ dependencies {
 How to use RedirectGlide?
 --------
   
-You should create ...
+You can simply use **RedirectGlide** by [`Glide`'s generated API][3]. Note that you **should clean and rebuild** your project to create `GlideApp` class in compile time.
 
 ```java
 String imageUrl = "https://goo.gl/9ctWqR";
@@ -37,9 +37,6 @@ GlideApp.with(getApplicationContext())
         .load(imageUrl)
         .into(imageView);
 ```
-
-• Note that you **should clean and rebuild** your project to create `GlideApp` class in compile time.
-
 
 ### • Custom maximum redirection count:
 
@@ -53,3 +50,4 @@ GlideApp.with(getApplicationContext())
 
   [1]: https://github.com/bumptech/glide
   [2]: https://github.com/bumptech/glide/tree/master/integration/okhttp3
+  [3]: https://bumptech.github.io/glide/doc/generatedapi.html
