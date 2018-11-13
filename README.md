@@ -27,5 +27,5 @@ How to use RedirectGlide?
   
 You should create both ...
 
-  [1]: https://github.com/bumptech/glide/tree/master/integration/okhttp3
-  [2]: https://github.com/bumptech/glide
+  [1]: https://github.com/bumptech/glide
+  [2]: https://github.com/bumptech/glide/tree/master/integration/okhttp3
