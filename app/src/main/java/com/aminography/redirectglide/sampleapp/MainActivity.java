@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
         textView = findViewById(R.id.textView);
 
         loadIndirectUrl();
-
 //        loadApiCallUrl();
     }
 
@@ -36,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         GlideApp.with(getApplicationContext())
                 .load(sourceUrl)
-                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
+                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)) // every time download the image for test
                 .into(imageView);
 
 //        Glide.with(getApplicationContext()).load(sourceUrl).into(imageView);
@@ -48,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         GlideApp.with(getApplicationContext())
                 .load(new MyApiCallGlideUrl(sourceUrl))
-                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
+                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE)) // every time download the image for test
                 .into(imageView);
     }
 
