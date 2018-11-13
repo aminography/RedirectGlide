@@ -7,9 +7,7 @@
 
 Sometimes the images you want to show with `Glide` have indirect link and you should redirect the `URL` to reach real direct link. **RedirectGlide** is an extension over [Glide's OkHttp3 Integration][2] which adds the redirection functionality to `Glide`.
 
-It's implemented for Glide-v4.
-
-Default maximum redirection count is 5
+• Now it's implemented only for Glide-v4.
 
 Download
 --------
@@ -22,6 +20,9 @@ repositories {
   
 dependencies {
     implementation 'com.aminography:redirectglide:1.0.0'
+    
+    implementation 'com.github.bumptech.glide:glide:4.8.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
 }
 ```
 
@@ -40,7 +41,7 @@ GlideApp.with(getApplicationContext())
 
 ### • Custom maximum redirection count:
 
-You can set the prefered maximum redirection count by wrapping the image `URL` with an instance of `RedirectGlideUrl`.
+The default value for maximum redirection count is set to 5. However you can change it by wrapping the image `URL` with an instance of `RedirectGlideUrl`.
 
 ```java
 GlideApp.with(getApplicationContext())
