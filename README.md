@@ -42,7 +42,7 @@ GlideApp.with(getApplicationContext())
 
 ### Custom maximum redirection count:
 
-You can set prefered maximum redirection count by wrapping the image `URL` with an instance of `RedirectGlideUrl`.
+You can set the prefered maximum redirection count by wrapping the image `URL` with an instance of `RedirectGlideUrl`.
 
 ```java
 GlideApp.with(getApplicationContext())
