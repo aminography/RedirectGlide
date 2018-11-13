@@ -5,7 +5,7 @@
   
 ## **RedirectGlide** empowers [Glide][1] to load images with indirect `URL`s.
 
-Sometimes the images you want to show with `Glide` have indirect link and you should redirect the `URL` to reach real direct link. **RedirectGlide** is an extension over [Glide's OkHttp3 Integration][2] which adds the redirection functionality to `Glide`.
+Sometimes the images you want to show with `Glide` have indirect link and you should redirect the `URL` to reach the real direct link. **RedirectGlide** is an extension over [Glide's OkHttp3 Integration][2] which adds the redirection functionality to `Glide`.
 
 • Now it's implemented only for Glide-v4.
 
