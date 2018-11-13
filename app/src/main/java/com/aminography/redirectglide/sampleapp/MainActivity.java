@@ -13,17 +13,25 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ImageView imageView;
+    private TextView textView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImageView imageView = findViewById(R.id.imageView);
-        TextView textView = findViewById(R.id.textView);
+        imageView = findViewById(R.id.imageView);
+        textView = findViewById(R.id.textView);
 
+        loadIndirectUrl();
+
+//        loadApiCallUrl();
+    }
+
+    private void loadIndirectUrl() {
 //        String sourceUrl = "https://goo.gl/9ctWqR";
         String sourceUrl = "https://bit.ly/2zeMrFB";
-
         textView.setText(String.format(Locale.getDefault(), "Source Url: %s", sourceUrl));
 
         GlideApp.with(getApplicationContext())
@@ -32,6 +40,16 @@ public class MainActivity extends AppCompatActivity {
                 .into(imageView);
 
 //        Glide.with(getApplicationContext()).load(sourceUrl).into(imageView);
+    }
+
+    private void loadApiCallUrl() {
+        String sourceUrl = "https://www.myfitbytes.com/wp-json/wp/v2/media/2811";
+        textView.setText(String.format(Locale.getDefault(), "Source Url: %s", sourceUrl));
+
+        GlideApp.with(getApplicationContext())
+                .load(new MyApiCallGlideUrl(sourceUrl))
+                .apply(RequestOptions.diskCacheStrategyOf(DiskCacheStrategy.NONE))
+                .into(imageView);
     }
 
 }

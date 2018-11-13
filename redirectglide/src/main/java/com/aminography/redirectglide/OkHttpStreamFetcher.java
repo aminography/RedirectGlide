@@ -29,7 +29,7 @@ public class OkHttpStreamFetcher implements DataFetcher<InputStream>, okhttp3.Ca
     private static final String TAG = "OkHttpFetcher";
     private final Call.Factory client;
     private final GlideUrl url;
-    private OkHttpRedirectUrlFetcher okHttpRedirectUrlFetcher;
+    private OkHttpRedirectUrlFetcher okHttpUrlFetcher;
     private InputStream stream;
     private ResponseBody responseBody;
     private DataCallback<? super InputStream> callback;
@@ -47,8 +47,13 @@ public class OkHttpStreamFetcher implements DataFetcher<InputStream>, okhttp3.Ca
     @Override
     public void loadData(@NonNull Priority priority, @NonNull final DataCallback<? super InputStream> callback) {
 
-        okHttpRedirectUrlFetcher = new OkHttpRedirectUrlFetcher(client, url);
-        okHttpRedirectUrlFetcher.loadData(new DataCallback<GlideUrl>() {
+        if (url instanceof BaseApiCallGlideUrl) {
+            okHttpUrlFetcher = new OkHttpApiCallUrlFetcher(client, (BaseApiCallGlideUrl) url);
+        } else {
+            okHttpUrlFetcher = new OkHttpRedirectUrlFetcher(client, url);
+        }
+
+        okHttpUrlFetcher.loadData(new DataCallback<GlideUrl>() {
 
             @Override
             public void onDataReady(@Nullable GlideUrl data) {
@@ -93,8 +98,8 @@ public class OkHttpStreamFetcher implements DataFetcher<InputStream>, okhttp3.Ca
 
     @Override
     public void cleanup() {
-        if (okHttpRedirectUrlFetcher != null) {
-            okHttpRedirectUrlFetcher.cleanup();
+        if (okHttpUrlFetcher != null) {
+            okHttpUrlFetcher.cleanup();
         }
 
         try {
@@ -112,8 +117,8 @@ public class OkHttpStreamFetcher implements DataFetcher<InputStream>, okhttp3.Ca
 
     @Override
     public void cancel() {
-        if (okHttpRedirectUrlFetcher != null) {
-            okHttpRedirectUrlFetcher.cancel();
+        if (okHttpUrlFetcher != null) {
+            okHttpUrlFetcher.cancel();
         }
 
         Call local = call;

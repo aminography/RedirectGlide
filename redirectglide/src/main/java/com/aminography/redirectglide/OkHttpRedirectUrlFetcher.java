@@ -13,6 +13,7 @@ import java.util.Map;
 import okhttp3.Call;
 import okhttp3.Request;
 import okhttp3.Response;
+import okhttp3.ResponseBody;
 
 /**
  * Fetches a direct url to the initial {@link GlideUrl} using the okhttp library.
@@ -21,11 +22,12 @@ public class OkHttpRedirectUrlFetcher implements okhttp3.Callback {
 
     private static final String TAG = "OkHttpRedirectUrl";
     private static final String LOCATION = "Location";
-    private static final int DEFAULT_MAX_REDIRECT = 5;
+    public static final int DEFAULT_MAX_REDIRECT = 5;
 
     private final Call.Factory client;
-    private GlideUrl url;
-    private DataFetcher.DataCallback<? super GlideUrl> callback;
+    protected GlideUrl url;
+    protected ResponseBody responseBody;
+    protected DataFetcher.DataCallback<? super GlideUrl> callback;
     // call may be accessed on the main thread while the object is in use on other threads. All other
     // accesses to variables may occur on different threads, but only one at a time.
     private volatile Call call;
@@ -83,15 +85,22 @@ public class OkHttpRedirectUrlFetcher implements okhttp3.Callback {
                     callback.onLoadFailed(new RedirectException(statusCode, "Redirects too many times!"));
                 }
             default:
-                if (response.isSuccessful()) {
-                    callback.onDataReady(url);
-                } else {
-                    callback.onLoadFailed(new HttpException(response.message(), response.code()));
-                }
+                consumeResponse(response);
+        }
+    }
+
+    public void consumeResponse(@NonNull Response response) {
+        if (response.isSuccessful()) {
+            callback.onDataReady(url);
+        } else {
+            callback.onLoadFailed(new HttpException(response.message(), response.code()));
         }
     }
 
     void cleanup() {
+        if (responseBody != null) {
+            responseBody.close();
+        }
         callback = null;
     }
 
