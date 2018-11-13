@@ -33,7 +33,7 @@ How to use RedirectGlide?
 You can simply use **RedirectGlide** by [Glide's generated API][3]. Note that you **should clean and rebuild** your project to create the `GlideApp` class in compile time.
 
 ```java
-String imageUrl = "https://goo.gl/9ctWqR";
+String imageUrl = "https://bit.ly/2zeMrFB";
 
 GlideApp.with(getApplicationContext())
         .load(imageUrl)
