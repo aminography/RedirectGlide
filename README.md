@@ -27,5 +27,7 @@ How to use RedirectGlide?
   
 You should create both ...
 
+• Note that you should clean and rebuild your project to create GlideApp class in compile time.
+
   [1]: https://github.com/bumptech/glide
   [2]: https://github.com/bumptech/glide/tree/master/integration/okhttp3
