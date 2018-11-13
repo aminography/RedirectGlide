@@ -40,6 +40,8 @@ GlideApp.with(getApplicationContext())
         .into(imageView);
 ```
 
+![Example](screenshot.png)
+
 ### • Customize the maximum redirection count
 
 The default value for maximum redirection count is set to 5. However you can change it by wrapping the image `URL` with an instance of `RedirectGlideUrl`.
