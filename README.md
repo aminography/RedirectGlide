@@ -40,9 +40,8 @@ GlideApp.with(getApplicationContext())
 
 • Note that you **should clean and rebuild** your project to create `GlideApp` class in compile time.
 
-.
 
-### Custom maximum redirection count:
+### * Custom maximum redirection count:
 
 You can set the prefered maximum redirection count by wrapping the image `URL` with an instance of `RedirectGlideUrl`.
 
