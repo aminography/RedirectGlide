@@ -3,7 +3,7 @@
 [![API](https://img.shields.io/badge/API-14%2B-ffaa00.svg?style=flat)](https://android-arsenal.com/api?level=14)
 [![Download](https://api.bintray.com/packages/aminography/maven/RedirectGlide/images/download.svg) ](https://bintray.com/aminography/maven/RedirectGlide/_latestVersion)
   
-**RedirectGlide** makes working with ...
+**RedirectGlide** ippowers glide to show images with indirect urls.
 
 Download
 --------
