@@ -35,7 +35,7 @@ You can simply use **RedirectGlide** by [Glide's generated API][3]. Note that yo
 ```java
 String imageUrl = "https://bit.ly/2zeMrFB";
 
-GlideApp.with(getApplicationContext())
+GlideApp.with(context)
         .load(imageUrl)
         .into(imageView);
 ```
@@ -47,7 +47,7 @@ GlideApp.with(getApplicationContext())
 The default value for maximum redirection count is set to 5. However you can change it by wrapping the image `URL` with an instance of `RedirectGlideUrl`.
 
 ```java
-GlideApp.with(getApplicationContext())
+GlideApp.with(context)
         .load(new RedirectGlideUrl(imageUrl, 10))
         .into(imageView);
 ```
