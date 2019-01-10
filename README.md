@@ -19,7 +19,7 @@ repositories {
 }
   
 dependencies {
-    implementation 'com.aminography:redirectglide:1.0.1'
+    implementation 'com.aminography:redirectglide:1.0.2'
     
     // The normal Glide dependencies
     implementation 'com.github.bumptech.glide:glide:4.8.0'

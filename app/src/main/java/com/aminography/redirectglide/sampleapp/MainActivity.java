@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadIndirectUrl() {
-//        String sourceUrl = "https://goo.gl/9ctWqR";
-        String sourceUrl = "https://bit.ly/2zeMrFB";
+        String sourceUrl = "https://goo.gl/9ctWqR";
+//        String sourceUrl = "https://bit.ly/2zeMrFB";
         textView.setText(String.format(Locale.getDefault(), "Source Url: %s", sourceUrl));
 
         GlideApp.with(getApplicationContext())
