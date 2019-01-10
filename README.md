@@ -1,5 +1,5 @@
 # RedirectGlide :zap:
-[![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-RedirectGlide-brightgreen.svg?style=flat )](https://android-arsenal.com/user/aminography)
+[![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-RedirectGlide-brightgreen.svg?style=flat )](https://android-arsenal.com/details/1/7431)
 [![API](https://img.shields.io/badge/API-14%2B-ffaa00.svg?style=flat)](https://android-arsenal.com/api?level=14)
 [![Download](https://api.bintray.com/packages/aminography/maven/RedirectGlide/images/download.svg) ](https://bintray.com/aminography/maven/RedirectGlide/_latestVersion)
   
@@ -7,7 +7,7 @@
 
 Sometimes the images you want to show with `Glide` have indirect link and you should redirect the `URL` to reach the real direct link. **RedirectGlide** is an extension over [Glide's OkHttp3 Integration][2] which adds the redirection functionality to `Glide`.
 
-• Now it's implemented only for Glide-v4.
+• Currently it's implemented only for Glide-v4.
 
 Download
 --------
@@ -35,7 +35,7 @@ You can simply use **RedirectGlide** by [Glide's generated API][3]. Note that yo
 ```java
 String imageUrl = "https://bit.ly/2zeMrFB";
 
-GlideApp.with(getApplicationContext())
+GlideApp.with(context)
         .load(imageUrl)
         .into(imageView);
 ```
@@ -47,7 +47,7 @@ GlideApp.with(getApplicationContext())
 The default value for maximum redirection count is set to 5. However you can change it by wrapping the image `URL` with an instance of `RedirectGlideUrl`.
 
 ```java
-GlideApp.with(getApplicationContext())
+GlideApp.with(context)
         .load(new RedirectGlideUrl(imageUrl, 10))
         .into(imageView);
 ```
