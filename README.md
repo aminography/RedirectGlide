@@ -47,12 +47,12 @@ How to use RedirectGlide?
   
 You can simply use **RedirectGlide** by [Glide's generated API][3]. Note that you **should clean and rebuild** your project to create the `GlideApp` class in compile time.
 
-```java
-String imageUrl = "https://bit.ly/2zeMrFB";
+```kotlin
+val imageUrl = "https://bit.ly/2zeMrFB"
 
 GlideApp.with(context)
         .load(imageUrl)
-        .into(imageView);
+        .into(imageView)
 ```
 
 ![Example](screenshot.png)
@@ -63,10 +63,10 @@ GlideApp.with(context)
 
 The default value for maximum redirection count is set to 5. However you can change it by wrapping the image `URL` with an instance of `RedirectGlideUrl`.
 
-```java
+```kotlin
 GlideApp.with(context)
-        .load(new RedirectGlideUrl(imageUrl, 10))
-        .into(imageView);
+        .load(RedirectGlideUrl(imageUrl, 10))
+        .into(imageView)
 ```
 
 <br/>
