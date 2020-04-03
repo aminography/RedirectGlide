@@ -61,7 +61,7 @@ GlideApp.with(context)
 
 ### • Customize the maximum redirection count
 
-The default value for maximum redirection count is set to 5. However you can change it by wrapping the image `URL` with an instance of `RedirectGlideUrl`.
+The default value for maximum redirection count is set to 5. However, you can change it by wrapping the image `URL` with an instance of `RedirectGlideUrl`.
 
 ```kotlin
 GlideApp.with(context)
