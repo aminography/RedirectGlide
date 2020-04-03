@@ -27,7 +27,7 @@ repositories {
 dependencies {
     implementation 'com.aminography:redirectglide:2.0.0'
     
-    // The normal Glide dependencies
+    // Glide dependencies
     implementation 'com.github.bumptech.glide:glide:4.9.0'
     kapt 'com.github.bumptech.glide:compiler:4.9.0'
 }
