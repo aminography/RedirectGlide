@@ -16,18 +16,28 @@ Download
 Add the following lines to your `build.gradle` file:
 
 ```gradle
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
 repositories {
     jcenter()
 }
   
 dependencies {
-    implementation 'com.aminography:redirectglide:1.0.3'
+    implementation 'com.aminography:redirectglide:2.0.0'
     
     // The normal Glide dependencies
     implementation 'com.github.bumptech.glide:glide:4.9.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.9.0'
+    kapt 'com.github.bumptech.glide:compiler:4.9.0'
 }
 ```
+
+* If you write code in Java, you should also add kotlin dependency too:
+```gradle
+dependencies {
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.70'
+}
 
 <br/>
 
@@ -57,6 +67,14 @@ GlideApp.with(context)
         .load(new RedirectGlideUrl(imageUrl, 10))
         .into(imageView);
 ```
+
+<br/>
+
+Change Log
+----------
+### Version 2.0.0
+- Migrating to AndroidX.
+- Migrating to Kotlin.
 
 <br/>
 
