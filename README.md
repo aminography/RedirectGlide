@@ -25,11 +25,11 @@ repositories {
 }
   
 dependencies {
-    implementation 'com.aminography:redirectglide:2.0.0'
+    implementation 'com.aminography:redirectglide:2.0.1'
     
     // Glide dependencies
-    implementation 'com.github.bumptech.glide:glide:4.9.0'
-    kapt 'com.github.bumptech.glide:compiler:4.9.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
 }
 ```
 
@@ -73,6 +73,9 @@ GlideApp.with(context)
 
 Change Log
 ----------
+### Version 2.0.1
+- Fixing compatibility with Glide 4.11.0.
+
 ### Version 2.0.0
 - Migrating to AndroidX.
 - Migrating to Kotlin.
