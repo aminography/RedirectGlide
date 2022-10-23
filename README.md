@@ -13,19 +13,15 @@ Sometimes the images you want to show with `Glide` have indirect link and you sh
 
 Download
 --------
-Add the following lines to your `build.gradle` file:
+`RedirectGlide` is available on MavenCentral to download using build tools systems. Add the following lines to your build.gradle file:
 
 ```gradle
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
-repositories {
-    jcenter()
-}
-  
 dependencies {
-    implementation 'com.aminography:redirectglide:2.0.1'
+    implementation 'com.aminography:redirectglide:2.1.0'
     
     // Glide dependencies
     implementation 'com.github.bumptech.glide:glide:4.11.0'
@@ -36,7 +32,7 @@ dependencies {
 * If you write code in Java, you should also add kotlin dependency too:
 ```gradle
 dependencies {
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.3.70'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:latest_version'
 }
 ```
 
