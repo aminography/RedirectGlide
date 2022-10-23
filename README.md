@@ -1,7 +1,7 @@
 # RedirectGlide :zap:
 [![Android Arsenal]( https://img.shields.io/badge/Android%20Arsenal-RedirectGlide-brightgreen.svg?style=flat )](https://android-arsenal.com/details/1/7431)
 [![API](https://img.shields.io/badge/API-14%2B-ffaa00.svg?style=flat)](https://android-arsenal.com/api?level=14)
-[![Download](https://api.bintray.com/packages/aminography/maven/RedirectGlide/images/download.svg) ](https://bintray.com/aminography/maven/RedirectGlide/_latestVersion)
+![mavenCentral](https://img.shields.io/maven-central/v/com.aminography/redirectglide?color=blue)
   
 ## **RedirectGlide** empowers [Glide][1] to load images with indirect `URL`s.
 
