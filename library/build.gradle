@@ -1,0 +1,42 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+apply from: rootProject.file('scripts/android.gradle')
+apply from: rootProject.file('scripts/kotlin.gradle')
+
+android {
+    defaultConfig {
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+    kapt 'com.github.bumptech.glide:compiler:4.11.0'
+    kapt 'androidx.annotation:annotation:1.1.0'
+
+    implementation 'com.squareup.okhttp3:okhttp:4.2.2'
+
+    testImplementation dep.junit.core
+    androidTestImplementation dep.bundles.androidTest
+}
+
+ext.publishInfo = [
+        groupId    : 'com.aminography',
+        artifactId : 'redirectglide',
+        version    : libVersion.name,
+        description: 'RedirectGlide makes Glide able to show images with indirect Urls.',
+        githubRepo : 'RedirectGlide' /* https://github.com/aminography/# */
+]
+
+apply from: rootProject.file('scripts/publish-module.gradle')
